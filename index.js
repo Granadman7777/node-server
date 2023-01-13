@@ -1,19 +1,15 @@
 const express = require('express');
 const app = express();
+const {validateUser} = require('./middlewares/index');
+const UserController = require('./controllers/UserController');
+
 const PORT = 3000;
 
-app.get('/', (req, res, next) => {
-  console.log('first');
-  req.newfield = 'super-important-value'
-  next();
-}, (req, res, next) => {
-   console.log('second');
-   next();
-}, (req, res, next) => {
-   console.log(third);
-   console.log(req.newfield);
-});
+const bodyParser = express.json();
+
+app.post('/user', bodyParser, validateUser, UserController.createUser);
+
 
 app.listen(PORT, () => {
   console.log(`Server Started on port ${PORT}`);
-});
+})

@@ -4,7 +4,7 @@
   "description": "",
   "private": true,
   "scripts": {
-    "test": "node./index.js;"
+    "start": "node ./index.js"
   },
   "repository": {
     "type": "git",
@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/Granadman7777/node-server#readme",
   "dependencies": {
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "yup": "^0.32.11"
   }
 }
